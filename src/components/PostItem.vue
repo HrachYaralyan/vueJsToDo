@@ -1,19 +1,20 @@
 <template>
   <div class="postWrapper">
-    <RouterLink :to="{ path: `/${post.id}` }" @click="handler">
+    <RouterLink :to="{ path: `/${post.id}` }">
       <div>
         <div><strong>My title strong </strong> {{ post.title }}</div>
         <div><strong>My info strong </strong> {{ post.body }}</div>
       </div>
     </RouterLink>
     <div>
-      <MyButton @click="$emit('remove', post)">Delete</MyButton>
+      <CustomButton @click="$emit('remove', post)">Delete</CustomButton>
     </div>
   </div>
 </template>
 
 <script>
-import MyButton from './Ui/MyButton.vue';
+import CustomButton from './Ui/CustomButton.vue';
+
 export default {
   data() {
     return {
@@ -27,7 +28,7 @@ export default {
       required: true,
     },
   },
-  components: { MyButton },
+  components: { CustomButton },
 };
 </script>
 

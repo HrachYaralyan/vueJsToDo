@@ -13,12 +13,12 @@
       class="inputAdd"
       placeholder="Info about title"
     />
-    <MyButton @click="addPost">Add Post</MyButton>
+    <CustomButton @click="addPost">Add Post</CustomButton>
   </form>
 </template>
 
 <script>
-import MyButton from './Ui/MyButton.vue';
+import CustomButton from './Ui/CustomButton.vue';
 export default {
   data() {
     return {
@@ -38,13 +38,13 @@ export default {
       };
     },
   },
-  components: { MyButton },
+  components: { CustomButton },
 };
 </script>
 
 <style>
 .inputAdd {
-  width: 95%;
+  width: 100%;
   height: 50px;
   border: 2px solid green;
   margin: 5px;

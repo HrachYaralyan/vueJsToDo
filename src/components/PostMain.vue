@@ -4,12 +4,12 @@
       <h2 @click="fetchPosts">Open modal and create New post</h2>
 
       <div class="buttonsWrapper">
-        <MyButton @click="openModal"> Open Modal </MyButton>
+        <CustomButton @click="openModal"> Open Modal </CustomButton>
       </div>
 
-      <MyDialog v-model:show="dialogVisble">
+      <CustomDialog v-model:show="dialogVisble">
         <post-form @create="createPost"
-      /></MyDialog>
+      /></CustomDialog>
 
       <post-list :posts="posts" @remove="removePost" v-if="!isLoading" />
       <div v-else style="color: red; margin-top: 50px">
@@ -22,9 +22,8 @@
 <script>
 import PostForm from '@/components/PostForm';
 import PostList from '@/components/PostList';
-import MyButton from '@/components/Ui/MyButton.vue';
-import MyDialog from '@/components/Ui/MyDialog.vue';
-// import { RouterView } from "vue-router";
+import CustomButton from '@/components/Ui/CustomButton.vue';
+import CustomDialog from '@/components/Ui/CustomDialog.vue';
 import axios from 'axios';
 
 export default {
@@ -32,8 +31,8 @@ export default {
   components: {
     PostForm,
     PostList,
-    MyButton,
-    MyDialog,
+    CustomButton,
+    CustomDialog,
   },
   data() {
     return {
@@ -72,7 +71,6 @@ export default {
             .get('https://jsonplaceholder.typicode.com/posts?_limit=10')
             .then((res) => res.data);
           this.posts = response;
-          console.log(response);
           this.isLoading = false;
         }, 1000);
       } catch (error) {
@@ -94,9 +92,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-.but {
-  margin: 20px;
 }
 .buttonsWrapper {
   display: flex;
