@@ -22,8 +22,8 @@
 <script>
 import PostForm from '@/components/PostForm';
 import PostList from '@/components/PostList';
-import CustomButton from '@/components/Ui/CustomButton.vue';
-import CustomDialog from '@/components/Ui/CustomDialog.vue';
+import CustomButton from '../components/shared/CustomButton.vue';
+import CustomDialog from '../components/shared/CustomDialog.vue';
 import axios from 'axios';
 
 export default {
@@ -41,7 +41,6 @@ export default {
       title: '',
       body: '',
       isLoading: false,
-      selectedSort: '88',
       sortOptions: [
         { value: 'title', name: 'Sort to Title' },
         { value: 'body', name: 'Sort to Info' },

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'custom__button',
+  name: 'custom__Button',
 };
 </script>
 

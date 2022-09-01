@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import CustomButton from './Ui/CustomButton.vue';
+import CustomButton from '../components/shared/CustomButton.vue';
 
 export default {
   data() {
